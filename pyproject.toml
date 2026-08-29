@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "usrp-monitor"
+version = "0.1.0"
+description = "Desktop RX monitor for USRP B205mini-i"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "numpy>=1.24",
+    "PyQt6>=6.5",
+    "pyqtgraph>=0.13",
+]
+
+[project.optional-dependencies]
+hardware = ["uhd"]
+
+[project.scripts]
+usrp-monitor = "usrp_monitor.__main__:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
